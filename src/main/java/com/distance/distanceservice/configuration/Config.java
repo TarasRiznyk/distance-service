@@ -30,7 +30,7 @@ public class Config {
 
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public DistanceCalculationService getDistanceCalculatorBean(Object... args) {
-        return new DistanceCalculationService((Map<String, Set<CitiesGraphServiceImpl.Neighbour>>) args[0]);
+    public DistanceCalculationService getDistanceCalculatorBean(Map<CitiesGraphServiceImpl.Neighbour, Set<CitiesGraphServiceImpl.Neighbour>> args) {
+        return new DistanceCalculationService(args);
     }
 }
